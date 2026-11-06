@@ -38,7 +38,7 @@
   --line:#2C2E36; --field:#4A4D57; --wash:#1D1F26; --bar:rgba(21,22,27,.94); --hl:#5A4A12; color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem;font-size:calc(var(--fs) - 3px)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:var(--fs);line-height:1.6;
   overflow-wrap:break-word}
 a{color:inherit}
@@ -223,8 +223,10 @@ footer{color:var(--muted);font-size:.9rem;padding:2rem 0;border-top:1px solid va
 }
 @media (max-width:560px){
   :root{--fs:18px}
+  html{font-size:calc(var(--fs) - 2px)}
   .bar-in{gap:.3rem}
-  .tb.fs{display:none}
+  .tb{min-width:34px;padding:0 .3rem}
+  .tools{gap:.1rem}
   .tx{padding-left:.2rem}
   .hero .idx{grid-template-columns:1fr}
   .sh h2{font-size:1.5rem}
@@ -3923,8 +3925,8 @@ footer{color:var(--muted);font-size:.9rem;padding:2rem 0;border-top:1px solid va
   function applyFs(){ if(fs) root.style.setProperty('--fs',fs+'px'); }
   applyFs();
   function base(){return parseFloat(getComputedStyle(root).getPropertyValue('--fs'))||19}
-  $('#mais').onclick=function(){fs=Math.min(30,base()+1);applyFs();set('or-fs',fs)};
-  $('#menos').onclick=function(){fs=Math.max(14,base()-1);applyFs();set('or-fs',fs)};
+  $('#mais').onclick=function(){fs=Math.min(34,base()+2);applyFs();set('or-fs',fs)};
+  $('#menos').onclick=function(){fs=Math.max(14,base()-2);applyFs();set('or-fs',fs)};
 
   // tema
   var TC={light:'#FBFBF8',sepia:'#F3EAD3',dark:'#15161B'};
