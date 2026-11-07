@@ -85,6 +85,14 @@ a{color:inherit}
 .nav a:hover{background:var(--wash)}
 .nav a.on{color:var(--rubric);background:var(--wash)}
 .nav li.off{display:none}
+/* grupos do menu: destacados em caixa, para não se confundirem com os títulos das orações */
+.nav{display:flex;flex-direction:column;gap:.4rem}
+.nav a{color:var(--rubric);font-weight:600;background:var(--wash);border:1.5px solid var(--rubric);border-left-width:5px;border-radius:8px;padding:.5rem .7rem}
+.nav a:hover{background:var(--rubric);color:var(--paper)}
+.nav a.on{background:var(--rubric);color:var(--paper)}
+.nav a b{color:inherit;opacity:.75}
+.hero .idx a{color:var(--rubric);font-weight:600;background:var(--wash);border:1.5px solid var(--rubric);border-left-width:5px;border-radius:8px;padding:.6rem .75rem}
+.hero .idx a:active{background:var(--rubric);color:var(--paper)}
 main{min-width:0;max-width:44rem;padding-bottom:6rem}
 
 /* ---------- abertura */
@@ -220,6 +228,7 @@ footer{color:var(--muted);font-size:.9rem;padding:2rem 0;border-top:1px solid va
   .hero .idx{display:grid;grid-template-columns:1fr 1fr;gap:.1rem .9rem;margin:1.6rem 0 0;padding:0;list-style:none}
   .hero .idx a{display:block;text-decoration:none;font-size:.95rem;line-height:1.25;padding:.42rem 0;border-bottom:1px solid var(--line)}
   .hero .idx b{display:none}
+  .hero .idx{gap:.5rem .6rem}
 }
 @media (max-width:560px){
   :root{--fs:18px}
